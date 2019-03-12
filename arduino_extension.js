@@ -948,6 +948,35 @@
       ['r', '讀取類比 %n', 'analogRead', 0],
       ['-'],
       ['r', '對應 %n 由 %n %n 為 %n %n', 'mapValues', 50, 0, 100, -240, 240]
+    ],
+    sl: [
+      ['h', 'ko je naprava priklopljena', 'whenConnected'],
+      [' ', 'priklopi %m.hwOut na pin %n', 'connectHW', 'led A', 3],
+      [' ', 'priklop %m.hwIn na analogni %n', 'connectHW', 'rotation knob', 0],
+      ['-'],
+      [' ', 'nastavi %m.leds %m.outputs', 'digitalLED', 'led A', 'on'],
+      [' ', 'nastavi %m.leds svetlost na %n%', 'setLED', 'led A', 100],
+      [' ', 'spremeni %m.leds svetlost za %n%', 'changeLED', 'led A', 20],
+      ['-'],
+      [' ', 'zavrti %m.servos na %n stopinj', 'rotateServo', 'servo A', 180],
+      [' ', 'zavrti %m.servos za %n stopinj', 'changeServo', 'servo A', 20],
+      ['-'],
+      ['h', 'ko je %m.buttons %m.btnStates', 'whenButton', 'button A', 'pressed'],
+      ['b', 'je %m.buttons pritisnjen?', 'isButtonPressed', 'button A'],
+      ['-'],
+      ['h', 'ko %m.hwIn %m.ops %n%', 'whenInput', 'rotation knob', '>', 50],
+      ['r', 'preberi %m.hwIn', 'readInput', 'rotation knob'],
+      ['-'],
+      [' ', 'nastavi pin %n %m.outputs', 'digitalWrite', 1, 'on'],
+      [' ', 'nastavi pin %n na %n%', 'analogWrite', 3, 100],
+      ['-'],
+      ['h', 'ko je pin %n %m.outputs', 'whenDigitalRead', 1, 'on'],
+      ['b', 'je pin %n vključen?', 'digitalRead', 1],
+      ['-'],
+      ['h', 'ko je analogni %n %m.ops %n%', 'whenAnalogRead', 1, '>', 50],
+      ['r', 'preberi analogni %n', 'analogRead', 0],
+      ['-'],
+      ['r', 'poveži %n z %n %n na %n %n', 'mapValues', 50, 0, 100, -240, 240]
     ]
   };
 
@@ -1091,6 +1120,16 @@
       outputs: ['開', '關'],
       ops: ['>', '=', '<'],
       servos: ['伺服馬達 A', '伺服馬達 B', '伺服馬達 C', '伺服馬達 D']
+    },
+    sl: {
+      buttons: ['tipka A', 'tipka B', 'tipka C', 'tipka D'],
+      btnStates: ['pritisnjena', 'spuščena'],
+      hwIn: ['gumb za vrtenje', 'senzor svetlobe', 'senzor temperature'],
+      hwOut: ['led A', 'led B', 'led C', 'led D', 'tipka A', 'tipka B', 'tipka C', 'tipka D', 'servo A', 'servo B', 'servo C', 'servo D'],
+      leds: ['led A', 'led B', 'led C', 'led D'],
+      outputs: ['vklopljen', 'izklopljen'],
+      ops: ['>', '=', '<'],
+      servos: ['servo A', 'servo B', 'servo C', 'servo D']
     }
   };
 
